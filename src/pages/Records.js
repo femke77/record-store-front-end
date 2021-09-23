@@ -18,6 +18,7 @@ function Records() {
     addRecord.mutate(Object.fromEntries(new FormData(event.target)), {
       onSuccess: () => {
         queryClient.invalidateQueries('records');
+        event.target.reset();
       },
     });
   };
