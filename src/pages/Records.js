@@ -15,17 +15,14 @@ function Records() {
   // THIS HAS CHANGED - It used to just console log the event
   const handleSubmit = event => {
     event.preventDefault();
+    
     addRecord.mutate(Object.fromEntries(new FormData(event.target)), {
+      
       onSuccess: () => {
-       console.log(event.target)
-       
-       
+        console.log(event.target)
         event.target.reset()
         queryClient.invalidateQueries('records');
- 
-        
-
-        
+      
       },
     });
   };
