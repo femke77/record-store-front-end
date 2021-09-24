@@ -15,9 +15,9 @@ function Records() {
   // THIS HAS CHANGED - It used to just console log the event
   const handleSubmit = event => {
     event.preventDefault();
-    
+    console.log("here")
     addRecord.mutate(Object.fromEntries(new FormData(event.target)), {
-      
+     
       onSuccess: () => {
         console.log(event.target)
         event.target.reset()
